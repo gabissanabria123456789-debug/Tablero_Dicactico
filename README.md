@@ -1,2 +1,285 @@
-# Tablero_Dicactico
-Tablero didáctico para niños con autismo no hablantes. 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎨 Tablero Didáctico Infantil</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fef9d7, #d299c2);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #ff4081;
+      text-shadow: 3px 3px #fff;
+      font-size: 2.8em;
+      margin-bottom: 40px;
+    }
+
+    .tablero {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 2cm;
+      row-gap: 25px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .item {
+      background: #fff;
+      border: 6px solid;
+      border-radius: 25px;
+      width: 190px;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Colores de bordes diferentes por ítem */
+    .item:nth-child(1) { border-color: #ff6f61; } /* rojo coral */
+    .item:nth-child(2) { border-color: #6ec1e4; } /* azul */
+    .item:nth-child(3) { border-color: #f7b731; } /* amarillo */
+    .item:nth-child(4) { border-color: #78e08f; } /* verde */
+    .item:nth-child(5) { border-color: #9b59b6; } /* morado */
+    .item:nth-child(6) { border-color: #ff9f43; } /* naranja */
+    .item:nth-child(7) { border-color: #E861D2; } /* rosado */
+    .item:nth-child(8) { border-color: #61E8DF; } /* azul coral */
+    .item:nth-child(9) { border-color: #CAE028; } /* verde pastel */
+    .item:nth-child(10) { border-color: #ED1A5F; } /* fuscia */
+    .item:nth-child(11) { border-color: #ff6f61; } /* rojo coral */
+    .item:nth-child(12) { border-color: #6ec1e4; } /* azul */
+    .item:nth-child(13) { border-color: #f7b731; } /* amarillo */
+    .item:nth-child(14) { border-color: #78e08f; } /* verde */
+    .item:nth-child(15) { border-color: #9b59b6; } /* morado */
+    .item:nth-child(16) { border-color: #ff9f43; } /* naranja */
+    .item:nth-child(17) { border-color: #E861D2; } /* rosado */
+    .item:nth-child(18) { border-color: #61E8DF; } /* azul coral */
+    .item:nth-child(19) { border-color: #CAE028; } /* verde pastel */
+    .item:nth-child(20) { border-color: #ED1A5F; } /* fuscia */
+    .item:nth-child(21) { border-color: #ff6f61; } /* rojo coral */
+    .item:nth-child(22) { border-color: #6ec1e4; } /* azul */
+    .item:nth-child(23) { border-color: #f7b731; } /* amarillo */
+    .item:nth-child(24) { border-color: #78e08f; } /* verde */
+    .item:nth-child(25) { border-color: #9b59b6; } /* morado */
+    .item:nth-child(26) { border-color: #ff9f43; } /* naranja */
+    .item:nth-child(27) { border-color: #E861D2; } /* rosado */
+    .item:nth-child(28) { border-color: #61E8DF; } /* azul coral */
+    .item:nth-child(29) { border-color: #CAE028; } /* verde pastel */
+    .item:nth-child(30) { border-color: #ED1A5F; } /* fuscia */
+
+
+
+
+    .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .palabra {
+      font-size: 2em;
+      font-weight: bold;
+      color: #000000;
+      margin-top: 10px;
+      text-shadow: 1px 1px #fff;
+    }
+
+   
+    .zoom {
+      animation: zoomAnim 0.4s ease forwards;
+      z-index: 10;
+      position: relative;
+    }
+
+     @keyframes zoomAnim {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.3); }
+      60% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>🧩PictoTEA🧩</h1>
+
+  <div class="tablero">
+    <div class="item" onclick="reproducir(this, 'escribir')">
+      <img src="imagenes/escribir.png" alt="Escribir">
+      <div class="palabra">Escribir</div>
+    </div>
+
+    <div class="item" onclick="reproducir(this, 'leer')">
+      <img src="imagenes/leer.png" alt="Leer">
+      <div class="palabra">Leer</div>
+    </div>
+
+    <div class="item" onclick="reproducir(this, 'pintar')">
+      <img src="imagenes/pintar.png" alt="Pintar">
+      <div class="palabra">Pintar</div>
+    </div>
+
+    <div class="item" onclick="reproducir(this, 'jugar')">
+      <img src="imagenes/jugar.png" alt="Jugar">
+      <div class="palabra">Jugar</div>
+    </div>
+
+    <div class="item" onclick="reproducir(this, 'comer')">
+      <img src="imagenes/comer.png" alt="Comer">
+      <div class="palabra">Comer</div>
+    </div>
+
+    <div class="item" onclick="reproducir(this, 'esperar')">
+      <img src="imagenes/esperar.png" alt="Esperar">
+      <div class="palabra">Esperar</div>
+    </div>
+  
+     
+     <div class="item" onclick="reproducir(this, 'descanso')">
+      <img src="imagenes/descanso.png" alt="Descanso">
+      <div class="palabra">Descanso</div>
+    </div>
+ 
+
+   <div class="item" onclick="reproducir(this, 'quiero')">
+      <img src="imagenes/quiero.png" alt="Quiero">
+      <div class="palabra">Quiero</div>
+    </div>
+ 
+
+   <div class="item" onclick="reproducir(this, 'yo')">
+      <img src="imagenes/yo.png" alt="Yo">
+      <div class="palabra">Yo</div>
+    </div>
+  
+ <div class="item" onclick="reproducir(this, 'dibujar')">
+      <img src="imagenes/dibujar.png" alt="Dibujar">
+      <div class="palabra">Dibujar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'baño')">
+      <img src="imagenes/baño.png" alt="Baño">
+      <div class="palabra">Baño</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'buscar')">
+      <img src="imagenes/buscar.png" alt="Buscar">
+      <div class="palabra">Buscar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'tachar')">
+      <img src="imagenes/tachar.png" alt="Tachar">
+      <div class="palabra">Tachar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'encerrar')">
+      <img src="imagenes/encerrar.png" alt="Encerrar">
+      <div class="palabra">Encerrar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'recortar')">
+      <img src="imagenes/recortar.png" alt="Recortar">
+      <div class="palabra">Recortar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'pegar')">
+      <img src="imagenes/pegar.png" alt="Pegar">
+      <div class="palabra">Pegar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'armar')">
+      <img src="imagenes/armar.png" alt="Armar">
+      <div class="palabra">Armar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'rasgar')">
+      <img src="imagenes/rasgar.png" alt="Rasgar">
+      <div class="palabra">Rasgar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'remarcar')">
+      <img src="imagenes/remarcar.png" alt="Remarcar">
+      <div class="palabra">Remarcar</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'unir')">
+      <img src="imagenes/unir.png" alt="Unir">
+      <div class="palabra">Unir</div>
+    </div>
+
+ <div class="item" onclick="reproducir(this, 'guardar')">
+      <img src="imagenes/guardar.png" alt="Guardar">
+      <div class="palabra">Guardar</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'borrar')">
+      <img src="imagenes/borrar.png" alt="Borrar">
+      <div class="palabra">Borrar</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'contar')">
+      <img src="imagenes/contar.png" alt="Contar">
+      <div class="palabra">Contar</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'construir')">
+      <img src="imagenes/construir.png" alt="Construir">
+      <div class="palabra">Construir</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'ayuda')">
+      <img src="imagenes/ayuda.png" alt="Ayuda">
+      <div class="palabra">Ayuda</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'perforar')">
+      <img src="imagenes/perforar.png" alt="Perforar">
+      <div class="palabra">Perforar</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'medir')">
+      <img src="imagenes/medir.png" alt="Medir">
+      <div class="palabra">Medir</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'mal')">
+      <img src="imagenes/mal.png" alt="Mal">
+      <div class="palabra">Mal</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'bien')">
+      <img src="imagenes/bien.png" alt="Bien">
+      <div class="palabra">Bien</div>
+    </div>
+
+<div class="item" onclick="reproducir(this, 'mirar')">
+      <img src="imagenes/mirar.png" alt="Mirar">
+      <div class="palabra">Mirar</div>
+    </div>
+</div>
+
+  <script>
+    function reproducir(elemento, palabra) {
+    if (window.audioActual) {
+        window.audioActual.pause();
+        window.audioActual.currentTime = 0;
+      }
+
+     const audio = new Audio(`audios/${palabra}.mp3`);
+      window.audioActual = audio;
+      audio.play();
+      
+       elemento.classList.remove('zoom');
+      void elemento.offsetWidth; // reinicia animación
+      elemento.classList.add('zoom');
+    }
+
+  </script>
+</body>
+</html>
+
